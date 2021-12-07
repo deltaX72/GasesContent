@@ -1,9 +1,19 @@
 version: '3.7'
 
 services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_USER: deltaX72
+      MYSQL_PASSWORD: zxcqwerty
+      MYSQL_HOST: localhost
+      MYSQL_PORT: 3306
+      MYSQL_DB: gases_content
+      MYSQL_ROOT_PASSWORD: zxcqwerty
+
   web:
     build: .
-    command: python3.9 /usr/src/GasesContent/manage.py runserver 0.0.0.0:8000
+    command: python3.9 /usr/src/GasesContent/manage.py runserver 127.0.0.1:8000
     volumes:
       - .:/usr/src/GasesContent/
     ports:
