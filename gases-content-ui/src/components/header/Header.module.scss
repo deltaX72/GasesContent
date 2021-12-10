@@ -1,0 +1,9 @@
+.container_position {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    box-shadow: 2px 0 15px 1px gray;
+    z-index: 1000;
+}

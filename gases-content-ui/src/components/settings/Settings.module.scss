@@ -1,0 +1,28 @@
+.settings_common {
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+  width: 350px;
+  position: fixed;
+  top: 55px;
+  background-color: white;
+  z-index: 1100;
+  transition: .2s;
+  box-shadow: 2px 0 15px 1px gray;
+  transform: translateX(-100%);
+  &.active{
+    transform: translateX(0);
+  }
+}
+.empty_container {
+  height: 50px;
+}
+.flex_elem {
+  display: flex;
+  justify-content: space-between;
+  width: 93%;
+  align-self: center;
+  height: 50px;
+  box-shadow: 0 0 7px 1px gray;
+  margin: 12px 0;
+}
