@@ -1,0 +1,15 @@
+.charts_common {
+  height: 800px;
+  width: 350px;
+  position: fixed;
+  right: 0;
+  top: 55px;
+  background-color: white;
+  z-index: 1100;
+  transition: .2s;
+  box-shadow: 2px 0 15px 1px gray;
+  transform: translateX(100%);
+  &.active{
+    transform: translateX(0);
+  }
+}

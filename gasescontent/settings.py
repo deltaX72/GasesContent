@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hs9zcd+4(k)0%l%7z7$l+hiju7i%3p!g$=c@a4^=!ss40+$!ql
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'terminal.apps.TerminalConfig',
+    'map.apps.MapConfig'
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'gasescontent.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gases_content',
+        'USERNAME': 'deltaX72',
+        'PASSWORD': 'zxcqwerty',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
@@ -129,3 +134,9 @@ SCRIPTS_URL = '/scripts/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configs for all applications
+
+MAX_GAS_NAME_LENGTH = 10
+MAX_SATELLITE_NAME_LENGTH = 10
+MAX_GOSAT_DATA_VERSION_FIELD_LENGTH = 6
