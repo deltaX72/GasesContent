@@ -1,9 +1,9 @@
 import React from 'react';
 import classes from './SimpleParagraph.module.scss';
 
-const SimpleParagraph = ({children}) => {
+const SimpleParagraph = ({children, ...props}) => {
     return (
-        <div className={classes.simple_paragraph}>
+        <div className={props.size === 'half' ? `${classes.simple_paragraph} ${classes.half}` : classes.simple_paragraph}>
             {children}
         </div>
     );

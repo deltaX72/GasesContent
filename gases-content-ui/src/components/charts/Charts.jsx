@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Charts.module.scss';
-import ButtonClose from "../UI elements/buttons/ButtonClose";
+import ButtonClose from "../UI elements/buttons/buttonClose/ButtonClose";
 
 const Charts = ({active, setActive}) => {return (
         <div className={active ? `${classes.charts_common} ${classes.active}` : classes.charts_common} >

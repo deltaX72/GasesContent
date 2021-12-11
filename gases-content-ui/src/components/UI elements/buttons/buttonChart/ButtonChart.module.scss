@@ -1,22 +1,13 @@
-$size: 40px;
+@import "src/styles/ButtonCircle.scss";
 .chart_styles {
   background: url('images/icons/chart_normal.png') center/cover no-repeat;
-  cursor: pointer;
   width: $size;
   height: $size;
-  border: 0;
   position: fixed;
-  top: 100px;
+  top: 70px;
   right: 20px;
   z-index: 800;
-  transition: .5s;
-  border-radius: 50%;
-  box-shadow: 0 0 15px 2px gray;
   &:hover{
     background: url('images/icons/chart_hover.png') center/cover no-repeat;
-  }
-  &:active{
-    transition: 0s;
-    transform: scale(.9);
   }
 }

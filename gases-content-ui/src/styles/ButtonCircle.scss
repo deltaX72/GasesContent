@@ -1,16 +1,16 @@
 $size: 40px;
-.close_block {
-  position: absolute;
+.button {
   top: 10px;
   width: $size;
   height: $size;
   border-radius: 50%;
+  cursor: pointer;
   box-shadow: 0 0 5px 1px gray;
   border: 0;
+  margin: 10px;
   background-color: white;
   color: black;
   font-size: 34px;
-  transform: rotate(45deg);
   transition: .2s;
   &:hover {
     background-color: black;
@@ -19,10 +19,4 @@ $size: 40px;
   &:active {
     transform: scale(.9);
   }
-}
-.left {
-  left: 10px;
-}
-.right {
-  right: 10px;
 }

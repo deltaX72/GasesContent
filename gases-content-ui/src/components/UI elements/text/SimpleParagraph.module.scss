@@ -1,7 +1,10 @@
 .simple_paragraph {
-  width: 90%;
-  background-color: aqua;
-}
-.half {
-  width: 40%;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  margin: 5px 0;
+  &.half{
+    width: 50%;
+  }
 }

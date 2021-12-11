@@ -1,0 +1,18 @@
+@import "src/styles/ButtonCircle.scss";
+$size: 40px;
+.close_block {
+  transform: rotate(45deg);
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+  &:active {
+    transform: scale(.9);
+  }
+}
+.left {
+  align-self: flex-start;
+}
+.right {
+  align-self: flex-end;
+}
