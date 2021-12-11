@@ -1,28 +1,30 @@
 .settings_common {
   display: flex;
   flex-direction: column;
-  height: 800px;
+  overflow: scroll;
   width: 350px;
+  height: calc(100% - 50px);
   position: fixed;
   top: 55px;
   background-color: white;
   z-index: 1100;
   transition: .2s;
-  box-shadow: 2px 0 15px 1px gray;
+  box-shadow: 2px 0 15px 1px dimgray;
   transform: translateX(-100%);
   &.active{
     transform: translateX(0);
   }
 }
-.empty_container {
-  height: 50px;
-}
 .flex_elem {
+  box-sizing: border-box;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 93%;
   align-self: center;
-  height: 50px;
+  align-items: center;
   box-shadow: 0 0 7px 1px gray;
-  margin: 12px 0;
+  padding: 5px;
+  font-weight: bold;
+  margin: 20px 0;
 }

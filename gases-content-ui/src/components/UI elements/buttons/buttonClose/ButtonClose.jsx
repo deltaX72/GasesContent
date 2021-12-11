@@ -5,7 +5,8 @@ const ButtonClose = ({...props}) => {
     return (
         <button
             {...props}
-            className={props.side ==='left' ? `${classes.close_block} ${classes.left}` : `${classes.close_block} ${classes.right}`}>
+            className={props.side ==='left' ? `${classes.close_block} ${classes.left} ${classes.button}` : `${classes.close_block} ${classes.right} ${classes.button}`}
+        >
             +
         </button>
     );
