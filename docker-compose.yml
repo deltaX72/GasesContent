@@ -2,19 +2,21 @@ version: '3.7'
 
 services:
   db:
-    image: mysql
+    image: postgres:12
     environment:
-      MYSQL_USER: deltaX72
-      MYSQL_PASSWORD: zxcqwerty
-      MYSQL_HOST: localhost
-      MYSQL_PORT: 3306
-      MYSQL_DB: gases_content
-      MYSQL_ROOT_PASSWORD: zxcqwerty
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - ./data/gases_content:/var/lib/postgresql/data
 
   web:
     build: .
-    command: python3.9 /usr/src/GasesContent/manage.py runserver 127.0.0.1:8000
+    command: python3.9 /usr/src/GasesContent/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/usr/src/GasesContent/
     ports:
-      - 8000:8000
+      - "8000:8000"
+    depends_on:
+      - db

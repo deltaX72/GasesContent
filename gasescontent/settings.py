@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hs9zcd+4(k)0%l%7z7$l+hiju7i%3p!g$=c@a4^=!ss40+$!ql
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'gases_content',
-        'USERNAME': 'deltaX72',
-        'PASSWORD': 'zxcqwerty',
+        'USERNAME': 'litil',
+        'PASSWORD': 'zxcqwe',
         'HOST': 'localhost',
         'PORT': '3306'
     }
@@ -123,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

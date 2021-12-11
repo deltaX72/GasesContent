@@ -1,6 +1,8 @@
 from django.db import models
 
-from gasescontent.settings import MAX_GAS_NAME_LENGTH, MAX_SATELLITE_NAME_LENGTH, MAX_GOSAT_DATA_VERSION_FIELD_LENGTH
+from gasescontent.settings import \
+    MAX_GAS_NAME_LENGTH, \
+    MAX_GOSAT_DATA_VERSION_FIELD_LENGTH
 
 
 class UserInputData(models.Model):
