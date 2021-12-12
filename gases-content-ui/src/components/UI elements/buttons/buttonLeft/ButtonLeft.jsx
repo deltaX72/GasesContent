@@ -3,9 +3,7 @@ import classes from './ButtonLeft.module.scss';
 
 const ButtonLeft = () => {
     return (
-        <button className={classes.button}>
-            {'<'}
-        </button>
+        <button className={classes.button} />
     );
 };
 

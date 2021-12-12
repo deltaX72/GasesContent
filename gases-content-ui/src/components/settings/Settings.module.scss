@@ -28,3 +28,14 @@
   font-weight: bold;
   margin: 20px 0;
 }
+.flex_block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+@media (max-width: 468px) {
+  .settings_common {
+    width: 100%;
+  }
+}

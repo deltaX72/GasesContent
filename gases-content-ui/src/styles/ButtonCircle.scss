@@ -1,8 +1,11 @@
 $size: 40px;
 .button {
+  box-sizing: border-box;
   top: 10px;
-  width: $size;
-  height: $size;
+  min-width: $size;
+  min-height: $size;
+  padding: 0;
+  line-height: $size;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 5px 1px gray;
