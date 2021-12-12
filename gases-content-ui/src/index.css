@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  font-size: 18px;
   font-family: 'Comfortaa', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

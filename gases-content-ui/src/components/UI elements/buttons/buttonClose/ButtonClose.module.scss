@@ -1,9 +1,10 @@
 @import "src/styles/ButtonCircle.scss";
-$size: 40px;
 .close_block {
+  position: sticky;
+  background: url('images/icons/white.png') center/cover no-repeat;
   transform: rotate(45deg);
   &:hover {
-    background-color: black;
+    background: url('images/icons/black.png') center/cover no-repeat;
     color: white;
   }
   &:active {

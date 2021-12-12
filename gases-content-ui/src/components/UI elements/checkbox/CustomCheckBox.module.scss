@@ -1,0 +1,26 @@
+.checkbox_style{
+  box-sizing: border-box;
+  margin: 10px;
+  outline: none;
+  transform: scale(1.5);
+}
+.container_style {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 5px 10px;
+  width: 40%;
+  transition: box-shadow .1s;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    box-shadow: 0 0 10px 1px gray;
+  }
+  &:active {
+    transform: scale(.98);
+  }
+  & label {
+    display: inline-block;
+    width: 100%;
+  }
+}
