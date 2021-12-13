@@ -1,0 +1,16 @@
+{
+  "latitude": "Широта",
+  "longitude": "Долгота",
+  "date": "Дата",
+  "submit": "Применить",
+  "month": "Месяц",
+  "selectOfSatellites": "Выбор спутников",
+  "selectGases": "Выбор газов",
+  "displayQuality": "Качество отображения",
+  "high": "Высокое",
+  "middle": "Невысокое",
+  "realData": "Реальные данные",
+  "min": "мин",
+  "max": "макс",
+  "lang": "Русский"
+}

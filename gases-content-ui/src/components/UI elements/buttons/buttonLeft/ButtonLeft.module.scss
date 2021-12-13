@@ -1,6 +1,9 @@
 @import "./src/styles/ButtonCircle.scss";
 .button {
   background: url('images/icons/white.png') center/cover no-repeat;
+  &.dark {
+    box-shadow: 0 0 10px 2px black;
+  }
   &:hover {
     background: url('images/icons/black.png') center/cover no-repeat;
   }

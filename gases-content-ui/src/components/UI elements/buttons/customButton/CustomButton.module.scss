@@ -12,6 +12,10 @@
   transition: .2s;
   padding: 5px;
   cursor: pointer;
+  border-radius: 3px;
+  &.dark{
+    box-shadow: 0 0 10px 2px black;
+  }
 
   &:hover {
     background-color: black;

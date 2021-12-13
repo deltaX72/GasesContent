@@ -7,6 +7,12 @@
   top: 70px;
   left: 20px;
   z-index: 800;
+  &.dark {
+    background: url('images/icons/menu_normal_dark.png') center/cover no-repeat;
+    &:hover {
+      background: url('images/icons/menu_normal.png') center/cover no-repeat;
+    }
+  }
   &:hover{
     background: url('images/icons/menu_hover.png') center/cover no-repeat;
   }

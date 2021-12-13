@@ -7,6 +7,12 @@
   top: 70px;
   right: 20px;
   z-index: 800;
+  &.dark {
+    background: url('images/icons/chart_normal_dark.png') center/cover no-repeat;
+    &:hover {
+      background: url('images/icons/chart_normal.png') center/cover no-repeat;
+    }
+  }
   &:hover{
     background: url('images/icons/chart_hover.png') center/cover no-repeat;
   }
