@@ -1,15 +1,34 @@
 .charts_common {
-  height: 800px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
   width: 350px;
+  height: calc(100% - 50px);
   position: fixed;
   right: 0;
   top: 55px;
   background-color: white;
   z-index: 1100;
   transition: .2s;
-  box-shadow: 2px 0 15px 1px dimgray;
-  transform: translateX(100%);
+  box-shadow: 0 10px 15px 2px dimgray;
+  border-radius: 5px;
+  transform: translateX(105%);
+  &.dark {
+    background-color: #36363A;
+    color: white;
+  }
   &.active{
-    transform: translateX(0);
+    transform: translateX(-2%);
+  }
+}
+
+@media (max-width: 468px) {
+  .charts_common {
+    width: 100%;
+    border-radius: 0;
+    transform: translateX(100%);
+    &.active{
+      transform: translateX(0);
+    }
   }
 }

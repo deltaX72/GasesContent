@@ -4,7 +4,7 @@ import './style.scss';
 
 const Map = () => {
     return (
-        <MapContainer id='map' center={[56.4884, 84.9480]} zoom={13} scrollWheelZoom={false} zoomControl={false}>
+        <MapContainer id='map' center={[56.4884, 84.9480]} zoom={13} scrollWheelZoom={true} zoomControl={false}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

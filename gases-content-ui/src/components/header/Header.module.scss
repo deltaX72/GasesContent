@@ -1,9 +1,17 @@
 .container_position {
     position: fixed;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
     top: 0;
     width: 100%;
     height: 50px;
     background-color: white;
+    padding: 15px;
     box-shadow: 2px 0 15px 1px dimgray;
     z-index: 1000;
+    &.dark {
+        background-color: #36363A;
+    }
 }

@@ -1,0 +1,21 @@
+@import "src/styles/ButtonCircle.scss";
+.dark_mode_styles {
+  background: url('images/icons/black_normal.png') center/cover no-repeat;
+  width: $size;
+  height: $size;
+  z-index: 800;
+  margin: auto;
+  box-shadow: 0 0 10px 2px black;
+  &.dark {
+    background: url('images/icons/white_normal.png') center/cover no-repeat;
+    &:hover {
+      background: url('images/icons/white_hover.png') center/cover no-repeat;
+    }
+  }
+  &:hover{
+    background: url('images/icons/black_hover.png') center/cover no-repeat;
+  }
+  &:active {
+    transform: rotate(360deg);
+  }
+}

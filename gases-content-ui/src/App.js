@@ -6,19 +6,24 @@ import Settings from "./components/settings/Settings";
 import Charts from "./components/charts/Charts";
 import './styles/App.scss'
 import ButtonChart from "./components/UI elements/buttons/buttonChart/ButtonChart";
+import LanguagesList from "./components/languages/LanguagesList";
 
 function App() {
     const [settingsActive, setSettingsActive] = useState(false);
+    const [languagesActive, setLanguagesActive] = useState(false);
     const [chartsActive, setChartsActive] = useState(false);
+    const [dark, setDark] = useState(false);
   return (
-    <div className="App">
-        <Map/>
-        <Header/>
-        <Settings active={settingsActive} setActive={setSettingsActive} />
-        <Charts active={chartsActive} setActive={setChartsActive} />
-        <ButtonBurger onClick={() => setSettingsActive(!settingsActive)} />
-        <ButtonChart onClick={() => setChartsActive(!chartsActive)} />
-    </div>
+      <div className="App">
+          <Map/>
+          <Header darkmode={dark} dark={dark} setDark={setDark} active={languagesActive}
+                  setActive={setLanguagesActive}/>
+          <Settings darkmode={dark} active={settingsActive} setActive={setSettingsActive}/>
+          <Charts darkmode={dark} active={chartsActive} setActive={setChartsActive}/>
+          <LanguagesList darkmode={dark} active={languagesActive} setActive={setLanguagesActive}/>
+          <ButtonBurger darkmode={dark} onClick={() => setSettingsActive(!settingsActive)}/>
+          <ButtonChart darkmode={dark} onClick={() => setChartsActive(!chartsActive)}/>
+      </div>
   );
 }
 

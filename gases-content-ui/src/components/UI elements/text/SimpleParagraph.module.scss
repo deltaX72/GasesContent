@@ -4,6 +4,9 @@
   text-align: center;
   padding: 5px;
   margin: 5px 0;
+  &.dark {
+    color: white;
+  }
   &.half{
     width: 50%;
   }
