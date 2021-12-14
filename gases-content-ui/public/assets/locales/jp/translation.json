@@ -1,0 +1,16 @@
+{
+  "latitude": "幅",
+  "longitude": "経度",
+  "date": "日付",
+  "submit": "適用する",
+  "month": "月",
+  "selectOfSatellites": "衛星の選択",
+  "selectGases": "ガスの選択",
+  "displayQuality": "表示品質",
+  "high": "高い",
+  "middle": "平均",
+  "realData": "実データ",
+  "min": "鉱山",
+  "max": "マックス",
+  "lang": "日本語"
+}

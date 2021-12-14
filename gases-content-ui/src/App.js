@@ -13,6 +13,7 @@ function App() {
     const [languagesActive, setLanguagesActive] = useState(false);
     const [chartsActive, setChartsActive] = useState(false);
     const [dark, setDark] = useState(false);
+
   return (
       <div className="App">
           <Map/>
