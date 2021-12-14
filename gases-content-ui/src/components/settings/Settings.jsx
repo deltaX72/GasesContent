@@ -62,24 +62,6 @@ const Settings = ({active, setActive, ...props}) => {
                 <CustomRadio darkmode={props.darkmode} id='middle' name='qual' children={t("middle")} size='full' />
                 <CustomRadio darkmode={props.darkmode} id='real' name='qual' children={t("realData")} size='full' />
             </div>
-            <div className={classes.flex_elem}>
-                <SimpleParagraph children='Выбор спутников' />
-                <CustomCheckBox checked={true} id='gosat' children='GOSAT' />
-                <CustomCheckBox id='gosat_2' children='GOSAT-2' />
-                <CustomCheckBox id='oco_2' children='OCO-2' />
-                <CustomCheckBox id='oco_3' children='OCO-3' />
-            </div>
-            <div className={classes.flex_elem}>
-                <SimpleParagraph children='Выбор газа' />
-                <CustomRadio checked={true} id='co_2' name='gas' children='CO-2' />
-                <CustomRadio id='ch_4' name='gas' children='CH-4' />
-            </div>
-            <div className={classes.flex_elem} >
-                <SimpleParagraph children='Качество отображения' />
-                <CustomRadio checked={true} id='high' name='qual' children='Высокое' size='full' />
-                <CustomRadio id='middle' name='qual' children='Невысокое' size='full' />
-                <CustomRadio id='real' name='qual' children='Реальные данные' size='full' />
-            </div>
         </div>
     );
 };

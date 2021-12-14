@@ -1,0 +1,16 @@
+{
+  "latitude": "Latitude",
+  "longitude": "Longitude",
+  "date": "Ամսաթիվ",
+  "submit": "Submit",
+  "month": "Month",
+  "selectOfSatellites": "Select of satellites",
+  "selectGases": "Select gases",
+  "displayQuality": "Display quality",
+  "high": "High",
+  "middle": "Middle",
+  "realData": "Real data",
+  "min": "min",
+  "max": "max",
+  "lang": "English"
+}
