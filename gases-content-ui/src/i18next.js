@@ -8,8 +8,8 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        supportedLngs: ['ru', 'en','am'],
-        fallbackLng: 'en',
+        supportedLngs: ['ru', 'en', 'jp', 'am'],
+        fallbackLng: 'ru',
         debug: false,
         detection: {
             order: [ 'cookie', 'htmlTag', 'localStorage', 'path', 'subdomain'],
