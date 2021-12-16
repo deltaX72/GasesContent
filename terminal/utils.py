@@ -78,9 +78,15 @@ def post_response(url: str, user: str = None, password: str = None, allow_redire
 #     tar = tarfile.open(directory + filename)
 #     return [tar.extractfile(i) for i in tar.getmembers()]
 
-def read_archive(archive: IO):
-    tar = tarfile.open(fileobj=archive)
-    return [tar.extractfile(i) for i in tar.getmembers()][1:]
+def read_archive(archive):
+    tar = tarfile.open(fileobj=BytesIO(archive), mode='r')
+
+    files = []
+    for i in tar.getmembers():
+        files.append(tar.extractfile(i))
+    # return [tar.extractfile(i) for i in tar.getmembers()][1:]
+
+    return files[1:]
 
 
 def save_cookies(cookiejar, filename):
@@ -91,3 +97,10 @@ def save_cookies(cookiejar, filename):
 def load_cookies(filename):
     with open(filename, 'rb') as f:
         return pickle.load(f)
+
+
+def check_if_not_200(code, url):
+    if code != 200:
+        print(f'Can\'t find file (url: {url})')
+        return True
+    return False

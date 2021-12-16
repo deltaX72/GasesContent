@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hs9zcd+4(k)0%l%7z7$l+hiju7i%3p!g$=c@a4^=!ss40+$!ql
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['192.168.0.3', '127.0.0.1']
 
 # Application definition
 
@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'terminal.apps.TerminalConfig',
-    'map.apps.MapConfig'
+    'map.apps.MapConfig',
+    'rest_framework',
+    'corsheaders',
+    'werkzeug_debugger_runserver',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'gasescontent.urls'
@@ -55,7 +60,7 @@ ROOT_URLCONF = 'gasescontent.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'gases-content-ui/build'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,19 +130,22 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+STATICFILES_DIRS = (
+    (BASE_DIR / 'gases-content-ui/build/static'),
+)
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-SCRIPTS_ROOT = os.path.join(BASE_DIR, 'scripts')
-SCRIPTS_URL = '/scripts/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Configs for all applications
+# Configs for react
 
-MAX_GAS_NAME_LENGTH = 10
-MAX_SATELLITE_NAME_LENGTH = 10
-MAX_GOSAT_DATA_VERSION_FIELD_LENGTH = 6
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = (
+       'http://localhost:3000',
+)
