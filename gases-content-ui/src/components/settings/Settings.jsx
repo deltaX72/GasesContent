@@ -9,6 +9,7 @@ import ButtonRight from "../UIelements/buttons/buttonRight/ButtonRight";
 import CustomCheckBox from "../UIelements/checkbox/CustomCheckBox";
 import CustomRadio from "../UIelements/radio/CustomRadio";
 import {useTranslation} from "react-i18next";
+import HeaderText from "../UIelements/header/HeaderText";
 
 const Settings = ({active, setActive, ...props}) => {
     let darkClass;
@@ -19,6 +20,9 @@ const Settings = ({active, setActive, ...props}) => {
     return (
         <div className={active ? `${classes.settings_common} ${classes.active} ${darkClass}` : `${classes.settings_common} ${darkClass}`} >
             <ButtonClose side='right' onClick={() => setActive(false)} darkmode={props.darkmode} />
+            <div className={`${classes.flex_elem} ${darkClass}`} >
+                <HeaderText children={t("settings")} />
+            </div>
             <div className={`${classes.flex_elem} ${darkClass}`}>
                 <SimpleParagraph children={t("latitude")} size='half' darkmode={props.darkmode} />
                 <SimpleParagraph children={t("longitude")} size='half' darkmode={props.darkmode} />
