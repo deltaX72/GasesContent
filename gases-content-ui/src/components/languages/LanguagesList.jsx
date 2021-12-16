@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from "../../components/languages/LanguagesList.module.scss";
-import ButtonClose from "../UI elements/buttons/buttonClose/ButtonClose";
+import ButtonClose from "../UIelements/buttons/buttonClose/ButtonClose";
 
 import ru from "./buttons/images/icons/ru.png";
 import en from "./buttons/images/icons/en.png";

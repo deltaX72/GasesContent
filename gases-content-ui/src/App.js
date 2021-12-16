@@ -1,11 +1,11 @@
 import Map from "./components/map/Map";
 import Header from "./components/header/Header";
-import ButtonBurger from "./components/UI elements/buttons/buttonBurger/ButtonBurger";
+import ButtonBurger from "./components/UIelements/buttons/buttonBurger/ButtonBurger";
 import {useState} from "react";
 import Settings from "./components/settings/Settings";
 import Charts from "./components/charts/Charts";
 import './styles/App.scss'
-import ButtonChart from "./components/UI elements/buttons/buttonChart/ButtonChart";
+import ButtonChart from "./components/UIelements/buttons/buttonChart/ButtonChart";
 import LanguagesList from "./components/languages/LanguagesList";
 
 function App() {

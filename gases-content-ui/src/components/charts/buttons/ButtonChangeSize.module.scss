@@ -1,0 +1,21 @@
+@import "src/styles/ButtonCircle.scss";
+
+.common_settings {
+  width: 40px;
+  height: 40px;
+  &.dark {
+    box-shadow: 0 0 10px 2px black;
+  }
+}
+.bg_less {
+  background: url('../../UIelements/buttons/buttonRight/images/icons/white.png') center/cover no-repeat;
+  &:hover {
+    background: url('../../UIelements/buttons/buttonRight/images/icons/black.png') center/cover no-repeat;
+  }
+}
+.bg_more {
+  background: url('../../UIelements/buttons/buttonLeft/images/icons/white.png') center/cover no-repeat;
+  &:hover {
+    background: url('../../UIelements/buttons/buttonLeft/images/icons/black.png') center/cover no-repeat;
+  }
+}
