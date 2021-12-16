@@ -1,13 +1,13 @@
 import React from 'react';
 import classes from './Settings.module.scss';
-import ButtonClose from "../UI elements/buttons/buttonClose/ButtonClose";
-import CustomButton from "../UI elements/buttons/customButton/CustomButton";
-import SimpleParagraph from "../UI elements/text/SimpleParagraph";
-import CustomInput from "../UI elements/input/CustomInput";
-import ButtonLeft from "../UI elements/buttons/buttonLeft/ButtonLeft";
-import ButtonRight from "../UI elements/buttons/buttonRight/ButtonRight";
-import CustomCheckBox from "../UI elements/checkbox/CustomCheckBox";
-import CustomRadio from "../UI elements/radio/CustomRadio";
+import ButtonClose from "../UIelements/buttons/buttonClose/ButtonClose";
+import CustomButton from "../UIelements/buttons/customButton/CustomButton";
+import SimpleParagraph from "../UIelements/text/SimpleParagraph";
+import CustomInput from "../UIelements/input/CustomInput";
+import ButtonLeft from "../UIelements/buttons/buttonLeft/ButtonLeft";
+import ButtonRight from "../UIelements/buttons/buttonRight/ButtonRight";
+import CustomCheckBox from "../UIelements/checkbox/CustomCheckBox";
+import CustomRadio from "../UIelements/radio/CustomRadio";
 import {useTranslation} from "react-i18next";
 
 const Settings = ({active, setActive, ...props}) => {
