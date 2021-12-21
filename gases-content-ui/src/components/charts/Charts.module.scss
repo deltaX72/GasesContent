@@ -13,6 +13,20 @@
   box-shadow: 0 10px 15px 2px dimgray;
   border-radius: 5px;
   transform: translateX(105%);
+  &::-webkit-scrollbar {
+    width: 7px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #36363A;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 15px;
+    background: transparent;
+  }
   &.dark {
     background-color: #36363A;
     color: white;

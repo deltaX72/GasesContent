@@ -12,5 +12,9 @@
   "realData": "Real data",
   "min": "min",
   "max": "max",
-  "lang": "English"
+  "lang": "English",
+  "settings": "Settings",
+  "charts": "Charts",
+  "coordinates": "Coordinates",
+  "selectLanguage": "Select language"
 }

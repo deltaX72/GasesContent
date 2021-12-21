@@ -1,6 +1,7 @@
 .container_position {
     position: fixed;
     display: flex;
+    font-family: inherit;
     justify-content: space-between;
     box-sizing: border-box;
     align-items: center;
@@ -11,7 +12,21 @@
     padding: 15px;
     box-shadow: 2px 0 15px 1px dimgray;
     z-index: 1000;
+    transition: .2s;
     &.dark {
         background-color: #36363A;
+        color: white;
+    }
+}
+.header_item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    & img {
+        width: 40px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 2px black;
+        margin-left: 10px;
+        margin-right: 20px;
     }
 }

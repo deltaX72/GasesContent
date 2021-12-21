@@ -1,26 +1,41 @@
-import React from 'react';
-import {MapContainer, TileLayer, useMap, ZoomControl} from 'react-leaflet'
+import React, {useState} from 'react';
+import {MapContainer, TileLayer, useMap, useMapEvents, ZoomControl} from 'react-leaflet'
 import './style.scss';
 import "leaflet.idw/src/leaflet-idw";
+import axios from "axios";
 
 let idw;
-const Map = () => {
+const Map = ({updateCoords}) => {
+    const [mapXY, setMapXY] = useState([56.4884, 84.9480]);
     function MyComponent() {
         const map = useMap();
         let L = window.L;
 
-        if (idw !== undefined){
-            idw.remove();
-        }
-
-        idw = L.idwLayer(
-            [[56.4884, 84.9480, 0.2], [56.3884, 84.5480, 0.5]],
-            {opacity: 0.3, cellSize: 3, exp: 2, max: 1200}).addTo(map);
+        // async function fetchData() {
+        //     const response = await axios.get('');
+        // }
+        const mapAction = useMapEvents(
+            {
+                click: (ev) => {
+                    console.log('=======================')
+                    console.log(`Широта: ${ev.latlng.lat}`);
+                    updateCoords([ev.latlng.lat, ev.latlng.lng]);
+                    console.log(`Долгота: ${ev.latlng.lng}`);
+                },
+            }
+        );
+        //
+        // if (idw !== undefined){
+        //     idw.remove();
+        // }
+        // idw = L.idwLayer(
+        //     [[56.4884, 84.9480, 0.2], [56.3884, 84.5480, 0.5]],
+        //     {opacity: 0.3, cellSize: 3, exp: 2, max: 1200}).addTo(map);
 
         return null
     }
     return (
-        <MapContainer id='map' center={[56.4884, 84.9480]} zoom={13} scrollWheelZoom={true} zoomControl={false}>
+        <MapContainer id='map' center={mapXY} zoom={13} scrollWheelZoom={true} zoomControl={false}>
             <TileLayer
                 reuseTiles={true}
                 preferCanvas={true}

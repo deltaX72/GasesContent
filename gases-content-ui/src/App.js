@@ -13,12 +13,24 @@ function App() {
     const [languagesActive, setLanguagesActive] = useState(false);
     const [chartsActive, setChartsActive] = useState(false);
     const [dark, setDark] = useState(false);
+    const [coords, setCoords] = useState([0.0, 0.0])
+
+    const updateCoords = (coords) => {
+      setCoords(coords);
+    }
 
   return (
       <div className="App">
-          <Map/>
-          <Header darkmode={dark} dark={dark} setDark={setDark} active={languagesActive}
-                  setActive={setLanguagesActive}/>
+          <Map updateCoords={updateCoords} />
+          <Header
+              darkmode={dark}
+              dark={dark}
+              setDark={setDark}
+              active={languagesActive}
+              setActive={setLanguagesActive}
+              coords={coords}
+              setCoords={setCoords}
+          />
           <Settings darkmode={dark} active={settingsActive} setActive={setSettingsActive}/>
           <Charts darkmode={dark} active={chartsActive} setActive={setChartsActive}/>
           <LanguagesList darkmode={dark} active={languagesActive} setActive={setLanguagesActive}/>

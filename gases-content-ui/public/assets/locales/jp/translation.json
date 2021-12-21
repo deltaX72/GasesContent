@@ -12,5 +12,9 @@
   "realData": "実データ",
   "min": "鉱山",
   "max": "マックス",
-  "lang": "日本語"
+  "lang": "日本語",
+  "settings": "チャート",
+  "charts": "チャート",
+  "coordinates": "座標",
+  "selectLanguage": "言語を選択する"
 }
