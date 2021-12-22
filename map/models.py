@@ -14,6 +14,41 @@ class UserInputData(models.Model):
     date_from = models.DateField()
     date_to = models.DateField()
 
+    satellites = models.CharField(max_length=8, choices=[
+        ('GOSAT', 'GOSAT'),
+        ('OCO-2', 'OCO-2'),
+        ('GOSAT-2', 'GOSAT-2'),
+        ('OCO-3', 'OCO-3')
+    ], default='GOSAT')
+
+    quality = models.CharField(max_length=25, choices=[
+        ('High', 8),
+        ('Medium', 16),
+        ('Real data', 4)
+    ], default='High')
+
+
+class UserOutputData(models.Model):
+    data = models.ForeignKey('GridRowData', on_delete=models.CASCADE)
+
+
+class GridRowData(models.Model):
+    column = models.ForeignKey('GridColumnData', on_delete=models.CASCADE)
+
+
+class GridColumnData(models.Model):
+    pixel = models.ForeignKey('PixelData', on_delete=models.CASCADE)
+
+
+class PixelData(models.Model):
+    x = models.IntegerField()
+    y = models.IntegerField()
+
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+
+    gas_content = models.FloatField()
+
 
 class Satellite(models.Model):
     satellite_name = models.CharField(max_length=MAX_SATELLITE_NAME_LENGTH, verbose_name='satellite_name')
