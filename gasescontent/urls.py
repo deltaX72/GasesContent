@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from gasescontent import settings
 from map.views import index
@@ -23,6 +23,7 @@ from map.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
+    path('api/', include('map.api.urls'))
 ]
 
 if settings.DEBUG:

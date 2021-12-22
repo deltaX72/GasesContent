@@ -19,9 +19,8 @@ RUN pip install psycopg2
 
 # copy project
 COPY . /usr/src/GasesContent
+RUN chmod +x /usr/src/GasesContent/start.sh
 
-EXPOSE 8000
+EXPOSE 80
 
-CMD ["python3.9", "manage.py", "makemigrations"]
-CMD ["python3.9", "manage.py", "migrate"]
-CMD ["python3.9", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["/usr/src/GasesContent/start.sh"]
