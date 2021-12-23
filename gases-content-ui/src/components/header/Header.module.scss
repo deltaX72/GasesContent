@@ -30,3 +30,19 @@
         margin-right: 20px;
     }
 }
+.short {
+    display: none;
+}
+@media (max-width: 780px) {
+    .full {
+        display: none;
+    }
+    .short {
+        display: flex;
+    }
+}
+@media (max-width: 468px) {
+    .adapt {
+        display: none;
+    }
+}

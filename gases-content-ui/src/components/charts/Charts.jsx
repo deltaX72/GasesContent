@@ -82,12 +82,10 @@ const Charts = ({active, setActive, ...props}) => {
             ? `${classes.charts_common} ${classBig} ${classes.active} ${darkClass}`
             : `${classes.charts_common} ${classBig} ${darkClass}`}
         >
-            <div>
-                <ButtonClose darkmode={props.darkmode} side='left' onClick={() => setActive(false)} />
+            <ButtonClose darkmode={props.darkmode} side='left' onClick={() => setActive(false)} />
+            <div className={`${classes.flex_elem} ${classes.sticky} ${darkClass}`}>
                 <ButtonChangeSize action={change} direction={direction} darkmode={props.darkmode}/>
-            </div>
-            <div className={`${classes.flex_elem} ${darkClass}`}>
-                <HeaderText children={t("charts")} />
+                <HeaderText double={true} children={t("charts")} />
             </div>
             <div className={`${classes.flex_elem} ${darkClass}`}>
                 <Chart options={options1} datasets={[datasets1]} />

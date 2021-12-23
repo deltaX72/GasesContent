@@ -38,6 +38,9 @@
 .big {
   width: 700px;
 }
+.sticky {
+  flex-wrap: nowrap;
+}
 .flex_elem {
   box-sizing: border-box;
   display: flex;
