@@ -7,6 +7,10 @@ import axios from "axios";
 let idw;
 const Map = ({updateCoords}) => {
     const [mapXY, setMapXY] = useState([56.4884, 84.9480]);
+    // async function fetchData(){
+    //     const response = await axios.get('https://jsonplaceholder.typicode.com/comments');
+    //     console.log(response.data);
+    // }
     function MyComponent() {
         const map = useMap();
         let L = window.L;
@@ -34,6 +38,7 @@ const Map = ({updateCoords}) => {
 
         return null
     }
+
     return (
         <MapContainer id='map' center={mapXY} zoom={13} scrollWheelZoom={true} zoomControl={false}>
             <TileLayer
@@ -42,7 +47,7 @@ const Map = ({updateCoords}) => {
                 updateWhenZooming={false}
                 detectRetina={true}
                 minZoom={3}
-                maxZoom={20}
+                maxZoom={19}
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />

@@ -2,7 +2,7 @@
   "latitude": "Լայնություն",
   "longitude": "Երկայնություն",
   "date": "Ամսաթիվ",
-  "submit": "Դիմել",
+  "submit": "Ընդունել",
   "month": "Ամիս",
   "selectOfSatellites": "Արբանյակների ընտրություն",
   "selectGases": "Գազի ընտրություն",
@@ -13,7 +13,7 @@
   "min": "մին",
   "max": "մաքս",
   "lang": "Հայերեն",
-  "settings": "Կարգավորումներ",
+  "settings": "Կարգավորում",
   "charts": "Գրաֆիկա",
   "coordinates": "Կոորդինատները",
   "selectLanguage": "Ընտրեք լեզուն"
