@@ -28,7 +28,7 @@ const Map = ({updateCoords}) => {
                 },
             }
         );
-        //
+
         // if (idw !== undefined){
         //     idw.remove();
         // }
