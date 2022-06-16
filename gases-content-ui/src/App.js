@@ -1,7 +1,7 @@
 import Map from "./components/map/Map";
 import Header from "./components/header/Header";
 import ButtonBurger from "./components/UIelements/buttons/buttonBurger/ButtonBurger";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Settings from "./components/settings/Settings";
 import Charts from "./components/charts/Charts";
 import './styles/App.scss'
@@ -13,6 +13,16 @@ function App() {
     const [languagesActive, setLanguagesActive] = useState(false);
     const [chartsActive, setChartsActive] = useState(false);
     const [dark, setDark] = useState(false);
+
+    useEffect(() => {
+        if (localStorage.getItem('dark') === 'false') {
+            setDark(false)
+        } else if (localStorage.getItem('dark') === 'true') {
+            setDark(true)
+        } else {
+            localStorage.setItem('dark', String(false))
+        }
+    })
     const [coords, setCoords] = useState([0.0, 0.0])
 
     const updateCoords = (coords) => {
