@@ -10,11 +10,21 @@ export const options1 = {
     scales: {
         x: {
             type: 'linear',
+            // grid: {
+            //     color: '#979A9A',
+            //     borderColor: '#979A9A',
+            // },
         },
         y: {
-            type: 'linear'
-        }
-    }
+            type: 'linear',
+            // grid: {
+            //     color: '#979A9A',
+            //     borderColor: '#979A9A',
+            // }
+        },
+    },
+    // color: 'white',
+
 }
 
 export const datasets1 = {
@@ -32,7 +42,20 @@ export const datasets1 = {
         297.6024562247509,
         296.2966263449363,
         295.4170424567078,
-        295.1244367253933
+        295.1244367253933,
+        291.63145999593024,
+        295.2869302216746,
+        292.4010206353587,
+        293.3748514861457,
+        295.0396415571533,
+        298.44753878294586,
+        292.4589146588886,
+        298.128136702767,
+        294.6024562247509,
+        498.2966263449363,
+        290.4170424567078,
+        294.1244367253933,
+
     ],
     borderColor: 'red',
     backgroundColor: 'white',
@@ -54,7 +77,20 @@ export const datasets2 = {
         294.6024562247509,
         298.2966263449363,
         290.4170424567078,
-        294.1244367253933
+        294.1244367253933,
+        291.63145999593024,
+        295.2869302216746,
+        292.4010206353587,
+        293.3748514861457,
+        195.0396415571533,
+        298.44753878294586,
+        292.4589146588886,
+        298.128136702767,
+        494.6024562247509,
+        298.2966263449363,
+        290.4170424567078,
+        294.1244367253933,
+
     ],
     borderColor: 'blue',
     backgroundColor: 'white',
@@ -88,7 +124,6 @@ const Charts = ({active, setActive, ...props}) => {
                 <HeaderText double={true} children={t("charts")} />
             </div>
             <div className={`${classes.flex_elem} ${darkClass}`}>
-                <Chart options={options1} datasets={[datasets1]} />
                 <Chart options={options1} datasets={[datasets2]} />
             </div>
             <div className={`${classes.flex_elem} ${darkClass}`}>

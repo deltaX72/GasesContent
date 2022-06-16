@@ -7,17 +7,11 @@ import axios from "axios";
 let idw;
 const Map = ({updateCoords}) => {
     const [mapXY, setMapXY] = useState([56.4884, 84.9480]);
-    // async function fetchData(){
-    //     const response = await axios.get('https://jsonplaceholder.typicode.com/comments');
-    //     console.log(response.data);
-    // }
+
     function MyComponent() {
         const map = useMap();
         let L = window.L;
 
-        // async function fetchData() {
-        //     const response = await axios.get('');
-        // }
         const mapAction = useMapEvents(
             {
                 click: (ev) => {
@@ -25,7 +19,12 @@ const Map = ({updateCoords}) => {
                     console.log(`Широта: ${ev.latlng.lat}`);
                     updateCoords([ev.latlng.lat, ev.latlng.lng]);
                     console.log(`Долгота: ${ev.latlng.lng}`);
+                    console.log(`Ширина и высота: ${map.getSize()}`);
+                    console.log(`Zoom: ${map.getZoom()}`);
                 },
+                zoom: (ev) => {
+                    console.log('ZOOOOOOOOM!!!!!!')
+                }
             }
         );
 
@@ -33,8 +32,15 @@ const Map = ({updateCoords}) => {
         //     idw.remove();
         // }
         // idw = L.idwLayer(
-        //     [[56.4884, 84.9480, 0.2], [56.3884, 84.5480, 0.5]],
-        //     {opacity: 0.3, cellSize: 3, exp: 2, max: 1200}).addTo(map);
+        //     [[56.4884, 84.9480, 1200], [56.3884, 84.5480, 100]],
+        //     {opacity: 0.2, cellSize: 3, exp: 2, max: 1200, gradient: {
+        //             0.0: 'blue',
+        //             0.25: 'cyan',
+        //             0.5: 'green',
+        //             0.75: 'yellow',
+        //             1: 'red'
+        //         }}
+        // ).addTo(map);
 
         return null
     }

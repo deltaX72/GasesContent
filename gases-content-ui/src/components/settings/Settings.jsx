@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import classes from './Settings.module.scss';
 import ButtonClose from "../UIelements/buttons/buttonClose/ButtonClose";
-import CustomButton from "../UIelements/buttons/customButton/CustomButton";
 import SimpleParagraph from "../UIelements/text/SimpleParagraph";
 import ButtonLeft from "../UIelements/buttons/buttonLeft/ButtonLeft";
 import ButtonRight from "../UIelements/buttons/buttonRight/ButtonRight";
 import {useTranslation} from "react-i18next";
 import HeaderText from "../UIelements/header/HeaderText";
+import axios from "axios";
 
 const Settings = ({active, setActive, ...props}) => {
     let darkClass;
@@ -57,11 +57,15 @@ const Settings = ({active, setActive, ...props}) => {
             realData
         }
     }
-    console.log(data)
 
     const changeGas = () => {
         setCo2(!co2);
         setCh4(!ch4);
+    }
+
+    const sendData = () => {
+        axios.get("http://192.168.0.2:8000/users/")
+            .then(res => console.log(res.data))
     }
 
     return (
@@ -121,7 +125,7 @@ const Settings = ({active, setActive, ...props}) => {
                 />
             </div>
 
-            <CustomButton children={t("submit")} darkmode={props.darkmode} />
+            <button onClick={sendData} className={`${classes.button_submit} ${darkClass}`}>{t("submit")}</button>
             <div className={`${classes.flex_elem} ${darkClass}`}>
                 <ButtonLeft darkmode={props.darkmode} />
                 <SimpleParagraph children={t("month")} size='half' darkmode={props.darkmode} />
