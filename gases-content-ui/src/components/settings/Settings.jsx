@@ -59,6 +59,7 @@ const Settings = ({active, setActive, ...props}) => {
             realData
         }
     }
+    console.log(data)
     const changeGas = () => {
         setCo2(!co2);
         setCh4(!ch4);
@@ -68,7 +69,6 @@ const Settings = ({active, setActive, ...props}) => {
         await axios.post("http://192.168.0.2:8000/api/", settingsData)
             .then(res => mapData = res.data)
     }
-
     return (
         <div className={active ? `${classes.settings_common} ${classes.active} ${darkClass}` : `${classes.settings_common} ${darkClass}`} >
             <ButtonClose side='right' onClick={() => setActive(false)} darkmode={props.darkmode} />
