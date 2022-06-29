@@ -52,6 +52,70 @@
     box-shadow: 0 0 7px 1px black;
   }
 }
+.common_styles {
+  width: 48%;
+  font-family: inherit;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 5px 0;
+  transition: .2s;
+  outline: none;
+  &:hover {
+    background-color: black;
+    color: white;
+    &::placeholder {
+      color: white;
+    }
+  }
+  &.half {
+    width: 22%;
+  }
+}
+.checkbox_style{
+  box-sizing: border-box;
+  margin: 10px;
+  outline: none;
+  transform: scale(1.5);
+}
+.container_style {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 5px 10px;
+  padding: 0;
+  width: 40%;
+  transition: box-shadow .1s;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    box-shadow: 0 0 10px 1px gray;
+    &.dark {
+      box-shadow: 0 0 15px 2px black;
+    }
+  }
+  &:active {
+    transform: scale(.98);
+  }
+  & label {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+  }
+  &.full {
+    width: 90%;
+  }
+}
+.radio_style {
+  box-sizing: border-box;
+  margin: 10px;
+  outline: none;
+  transform: scale(1.5);
+}
+
 @media (max-width: 468px) {
   .settings_common {
     width: 100%;
