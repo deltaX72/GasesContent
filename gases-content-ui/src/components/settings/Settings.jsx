@@ -8,14 +8,16 @@ import {useTranslation} from "react-i18next";
 import HeaderText from "../UIelements/header/HeaderText";
 import axios from "axios";
 
+let mapData;
+
 const Settings = ({active, setActive, ...props}) => {
     let darkClass;
     props.darkmode ?  darkClass = classes.dark : darkClass = '';
 
-    const [minLat, setMinLat] = useState(56.44);
-    const [maxLat, setMaxLat] = useState(56.55);
-    const [minLong, setMinLong] = useState(84.9);
-    const [maxLong, setMaxLong] = useState(85);
+    const [minLat, setMinLat] = useState();
+    const [maxLat, setMaxLat] = useState();
+    const [minLong, setMinLong] = useState();
+    const [maxLong, setMaxLong] = useState();
 
     const [dateFrom, setDateFrom] = useState("");
     const [dateTo, setDateTo] = useState("");
@@ -34,7 +36,7 @@ const Settings = ({active, setActive, ...props}) => {
 
     const { t } = useTranslation();
 
-    let data = {
+    let settingsData = {
         minLat,
         maxLat,
         minLong,
@@ -57,15 +59,14 @@ const Settings = ({active, setActive, ...props}) => {
             realData
         }
     }
-
     const changeGas = () => {
         setCo2(!co2);
         setCh4(!ch4);
     }
 
-    const sendData = () => {
-        axios.get("http://192.168.0.2:8000/users/")
-            .then(res => console.log(res.data))
+    async function sendData() {
+        await axios.post("http://192.168.0.2:8000/api/", settingsData)
+            .then(res => mapData = res.data)
     }
 
     return (
@@ -251,6 +252,7 @@ const Settings = ({active, setActive, ...props}) => {
                 </div>
             </div>
         </div>
+
     );
 };
 

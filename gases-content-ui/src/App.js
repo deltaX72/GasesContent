@@ -13,6 +13,7 @@ function App() {
     const [languagesActive, setLanguagesActive] = useState(false);
     const [chartsActive, setChartsActive] = useState(false);
     const [dark, setDark] = useState(false);
+    const [coords, setCoords] = useState([0.0, 0.0])
 
     useEffect(() => {
         if (localStorage.getItem('dark') === 'false') {
@@ -22,8 +23,7 @@ function App() {
         } else {
             localStorage.setItem('dark', String(false))
         }
-    })
-    const [coords, setCoords] = useState([0.0, 0.0])
+    }, [])
 
     const updateCoords = (coords) => {
       setCoords(coords);
@@ -42,7 +42,7 @@ function App() {
               setCoords={setCoords}
           />
           <Settings darkmode={dark} active={settingsActive} setActive={setSettingsActive}/>
-          <Charts darkmode={dark} active={chartsActive} setActive={setChartsActive}/>
+          <Charts coords={coords} darkmode={dark} active={chartsActive} setActive={setChartsActive}/>
           <LanguagesList darkmode={dark} active={languagesActive} setActive={setLanguagesActive}/>
           <ButtonBurger darkmode={dark} onClick={() => setSettingsActive(!settingsActive)}/>
           <ButtonChart darkmode={dark} onClick={() => setChartsActive(!chartsActive)}/>
