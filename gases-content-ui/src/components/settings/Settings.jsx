@@ -1,21 +1,23 @@
 import React, {useState} from 'react';
 import classes from './Settings.module.scss';
 import ButtonClose from "../UIelements/buttons/buttonClose/ButtonClose";
-import CustomButton from "../UIelements/buttons/customButton/CustomButton";
 import SimpleParagraph from "../UIelements/text/SimpleParagraph";
 import ButtonLeft from "../UIelements/buttons/buttonLeft/ButtonLeft";
 import ButtonRight from "../UIelements/buttons/buttonRight/ButtonRight";
 import {useTranslation} from "react-i18next";
 import HeaderText from "../UIelements/header/HeaderText";
+import axios from "axios";
+
+let mapData;
 
 const Settings = ({active, setActive, ...props}) => {
     let darkClass;
     props.darkmode ?  darkClass = classes.dark : darkClass = '';
 
-    const [minLat, setMinLat] = useState(56.44);
-    const [maxLat, setMaxLat] = useState(56.55);
-    const [minLong, setMinLong] = useState(84.9);
-    const [maxLong, setMaxLong] = useState(85);
+    const [minLat, setMinLat] = useState();
+    const [maxLat, setMaxLat] = useState();
+    const [minLong, setMinLong] = useState();
+    const [maxLong, setMaxLong] = useState();
 
     const [dateFrom, setDateFrom] = useState("");
     const [dateTo, setDateTo] = useState("");
@@ -34,7 +36,7 @@ const Settings = ({active, setActive, ...props}) => {
 
     const { t } = useTranslation();
 
-    let data = {
+    let settingsData = {
         minLat,
         maxLat,
         minLong,
@@ -58,12 +60,15 @@ const Settings = ({active, setActive, ...props}) => {
         }
     }
     console.log(data)
-
     const changeGas = () => {
         setCo2(!co2);
         setCh4(!ch4);
     }
 
+    async function sendData() {
+        await axios.post("http://192.168.0.2:8000/api/", settingsData)
+            .then(res => mapData = res.data)
+    }
     return (
         <div className={active ? `${classes.settings_common} ${classes.active} ${darkClass}` : `${classes.settings_common} ${darkClass}`} >
             <ButtonClose side='right' onClick={() => setActive(false)} darkmode={props.darkmode} />
@@ -121,7 +126,7 @@ const Settings = ({active, setActive, ...props}) => {
                 />
             </div>
 
-            <CustomButton children={t("submit")} darkmode={props.darkmode} />
+            <button onClick={sendData} className={`${classes.button_submit} ${darkClass}`}>{t("submit")}</button>
             <div className={`${classes.flex_elem} ${darkClass}`}>
                 <ButtonLeft darkmode={props.darkmode} />
                 <SimpleParagraph children={t("month")} size='half' darkmode={props.darkmode} />
@@ -247,6 +252,7 @@ const Settings = ({active, setActive, ...props}) => {
                 </div>
             </div>
         </div>
+
     );
 };
 

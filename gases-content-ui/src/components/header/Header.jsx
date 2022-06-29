@@ -12,6 +12,15 @@ const Header = ({dark, setDark, active, setActive, coords, setCoords, ...props})
     props.darkmode ?  darkClass = classes.dark : darkClass = '';
     const { t } = useTranslation();
 
+    const changeMode = () => {
+        if (localStorage.getItem('dark') === 'false') {
+            setDark(true)
+            localStorage.setItem('dark', 'true')
+        } else if (localStorage.getItem('dark') === 'true') {
+            setDark(false)
+            localStorage.setItem('dark', 'false')
+        }
+    }
     return (
         <header className={`${classes.container_position} ${darkClass}`}>
             <div className={classes.header_item}>
@@ -25,7 +34,7 @@ const Header = ({dark, setDark, active, setActive, coords, setCoords, ...props})
             </div>
             <div className={classes.header_item}>
                 <ButtonLanguage darkmode={props.darkmode} onClick={() => setActive(!active)}/>
-                <ButtonDarkMode darkmode={props.darkmode} onClick={() => setDark(!dark)} />
+                <ButtonDarkMode darkmode={props.darkmode} onClick={changeMode} />
             </div>
         </header>
     );

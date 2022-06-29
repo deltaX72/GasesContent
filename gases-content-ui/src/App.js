@@ -1,7 +1,7 @@
 import Map from "./components/map/Map";
 import Header from "./components/header/Header";
 import ButtonBurger from "./components/UIelements/buttons/buttonBurger/ButtonBurger";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Settings from "./components/settings/Settings";
 import Charts from "./components/charts/Charts";
 import './styles/App.scss'
@@ -14,6 +14,16 @@ function App() {
     const [chartsActive, setChartsActive] = useState(false);
     const [dark, setDark] = useState(false);
     const [coords, setCoords] = useState([0.0, 0.0])
+
+    useEffect(() => {
+        if (localStorage.getItem('dark') === 'false') {
+            setDark(false)
+        } else if (localStorage.getItem('dark') === 'true') {
+            setDark(true)
+        } else {
+            localStorage.setItem('dark', String(false))
+        }
+    }, [])
 
     const updateCoords = (coords) => {
       setCoords(coords);
@@ -32,7 +42,7 @@ function App() {
               setCoords={setCoords}
           />
           <Settings darkmode={dark} active={settingsActive} setActive={setSettingsActive}/>
-          <Charts darkmode={dark} active={chartsActive} setActive={setChartsActive}/>
+          <Charts coords={coords} darkmode={dark} active={chartsActive} setActive={setChartsActive}/>
           <LanguagesList darkmode={dark} active={languagesActive} setActive={setLanguagesActive}/>
           <ButtonBurger darkmode={dark} onClick={() => setSettingsActive(!settingsActive)}/>
           <ButtonChart darkmode={dark} onClick={() => setChartsActive(!chartsActive)}/>

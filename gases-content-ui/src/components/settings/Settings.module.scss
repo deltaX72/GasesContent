@@ -115,7 +115,33 @@
   outline: none;
   transform: scale(1.5);
 }
+.button_submit {
+  width: 70%;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 0 0 10px 1px gray;
+  color: black;
+  align-self: center;
+  margin: 5px;
+  border: 0;
+  transition: .2s;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  &.dark{
+    box-shadow: 0 0 10px 2px black;
+  }
 
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+  &:active {
+    transform: scale(.98);
+  }
+}
 @media (max-width: 468px) {
   .settings_common {
     width: 100%;
